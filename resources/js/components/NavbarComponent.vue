@@ -12,7 +12,7 @@
                         <a href="#" class="nav-link"><span><i class="fas fa-user"></i></span> Usuario</a>
                     </li>
                     <li class="nav-item active">
-                        <a href="#" class="nav-link"><span><i class="fa fa-shopping-cart"></i></span> Producto(s) </a>
+                        <a href="#" class="nav-link"><span><i class="fa fa-shopping-cart"></i></span> {{cant_producto}} Producto(s) </a>
                     </li>
                 </ul>
                 <form action="" class="form-inline my-2 my-lg-0">
@@ -39,12 +39,20 @@
 <script>
 export default {
     data(){
-        busqueda: ''
+        return{
+            busqueda: '',
+            cant_producto: 0,
+            cart: []
+        }
     },
     methods:{
         buscar(){
 
         },
+        addToCart(item){
+            this.cart.push(item)
+            cant_producto++
+        }
     }
 }
 </script>

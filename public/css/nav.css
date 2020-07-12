@@ -11,3 +11,8 @@ li{
     transition-timing-function: linear;
     transition-delay: 0s;
 }
+
+html{
+    min-height: 100%;
+    position: relative;
+}
