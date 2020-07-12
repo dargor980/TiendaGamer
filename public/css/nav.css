@@ -1,0 +1,13 @@
+li:hover{
+    
+    background-color: rgba(126, 252, 0, 0.658);
+    
+}
+
+li{
+    border-radius: 5px;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
