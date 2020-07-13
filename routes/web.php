@@ -29,5 +29,7 @@ Route::get('/contacto','PagesController@viewContact');
 
 Route::resource('/noticias', 'CarrouselController');
 
+Route::resource('/administracion','AdminController')->middleware('auth');
 
+Route::get('/editarnoticias','AdminController@showEditarNoticias')->middleware('auth');
 

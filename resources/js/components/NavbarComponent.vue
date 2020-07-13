@@ -16,7 +16,7 @@
                     </li>
                 </ul>
                 <form action="" class="form-inline my-2 my-lg-0">
-                    <input type="search" class="form-control mr-sm-2" placeholder="Buscar producto" aria-label="Search">
+                    <input type="search" class="form-control mr-sm-2 rounded-pill" placeholder="Buscar producto" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                 </form>
             </div>

@@ -31,7 +31,7 @@
       <div class="sidebar-menu">
         <ul>
           <li class="header-menu">
-            <span>General</span>
+            <span>Administración</span>
           </li>
           <li class="sidebar-dropdown">
             <a href="#">
@@ -42,12 +42,12 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Sección noticias
+                  <a href="#" @click="opcion='noticias'">Sección noticias
                     <span class="badge badge-pill badge-success">Pro</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">Productos destacados</a>
+                  <a href="#" @click="opcion='productos destacados'">Productos destacados</a>
                 </li>
                 <li>
                   <a href="#">Dashboard 3</a>
@@ -58,18 +58,18 @@
           <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fa-shopping-cart"></i>
-              <span>E-commerce</span>
+              <span>Inventario</span>
               <span class="badge badge-pill badge-danger">3</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Products
+                  <a href="#">Productos
 
                   </a>
                 </li>
                 <li>
-                  <a href="#">Orders</a>
+                  <a href="#">Ordenes de compra</a>
                 </li>
                 <li>
                   <a href="#">Credit cart</a>
@@ -105,7 +105,7 @@
           <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fa-chart-line"></i>
-              <span>Charts</span>
+              <span>Estadísticas de ventas</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
@@ -126,16 +126,16 @@
           </li>
           <li class="sidebar-dropdown">
             <a href="#">
-              <i class="fa fa-globe"></i>
-              <span>Maps</span>
+              <i class="fa fa-envelope"></i>
+              <span>Mensajes</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Google maps</a>
+                  <a href="#">Bandeja de entrada</a>
                 </li>
                 <li>
-                  <a href="#">Open street map</a>
+                  <a href="#">Enviados</a>
                 </li>
               </ul>
             </div>
@@ -167,55 +167,17 @@
       <!-- sidebar-menu  -->
     </div>
     <!-- sidebar-content  -->
-    <div class="sidebar-footer">
-      <a href="#">
-        <i class="fa fa-bell"></i>
-        <span class="badge badge-pill badge-warning notification">3</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-envelope"></i>
-        <span class="badge badge-pill badge-success notification">7</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-cog"></i>
-        <span class="badge-sonar"></span>
-      </a>
-      <a href="#">
-        <i class="fa fa-power-off"></i>
-      </a>
-    </div>
+   
   </nav>
-  <!-- sidebar-wrapper  -->
+
 
 
   <main class="page-content">
     <div class="container-fluid">
-      <h2>Bienvenido</h2>
-      <hr>
-      
-        
-      
-      <h5>More templates</h5>
-      <hr>
-      
-      <hr>
+      <contprincipal v-if="opcion===''"></contprincipal>
+      <editnoticias v-if="opcion==='noticias'"></editnoticias>
 
-      <footer class="text-center">
-        <div class="mb-2">
-          <small>
-            © 2020 Tienda Gamer. Created by <a href="https://github.com/dargor980">Germán contreras.</a> 
-            
-          </small>
-        </div>
-        <div>
-          <a href="https://github.com/dargor980" target="_blank">
-            <img alt="GitHub followers" src="https://img.shields.io/github/followers/dargor980?style=social" />
-          </a>
-          <a href="https://twitter.com/azouaoui_med" target="_blank">
-            <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/azouaoui_med?label=twitter&style=social" />
-          </a>
-        </div>
-      </footer>
+     <footadmin></footadmin>
     </div>
   </main>
   <!-- page-content" -->
@@ -229,11 +191,16 @@
 export default {
     data(){
         return{
-
+          opcion:''
         }
     },
     created(){
+      
+    },
+    methods:{
+      actdiv(){
 
+      }
     }
     
 }

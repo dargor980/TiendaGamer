@@ -3,18 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Noticia;
-
-class CarrouselController extends Controller
+use App\User;
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Noticia::all();
+        if($request->ajax())
+        {
+            return Auth::user()->name;
+        }
     }
 
     /**
@@ -35,12 +37,7 @@ class CarrouselController extends Controller
      */
     public function store(Request $request)
     {
-        $noticia = new Noticia();
-        $noticia->titulo=$request->titulo;
-        $noticia->descripcion=$request->descripcion;
-        $noticia->url_imagen='prueba';
-        $noticia->save();
-        return $noticia;
+        //
     }
 
     /**
@@ -74,12 +71,7 @@ class CarrouselController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $noticia= Noticia::find($id);
-        $noticia->titulo= $request->titulo;
-        $noticia->descripcion= $request->descripcion;
-        $noticia->url_imagen= 'prueba de update';
-        $noticia->save();
-        return $noticia;
+        //
     }
 
     /**
@@ -90,7 +82,11 @@ class CarrouselController extends Controller
      */
     public function destroy($id)
     {
-        $noticia= Noticia::find($id);
-        $noticia->delete();
+        //
+    }
+
+    public function showEditarNoticias()
+    {
+        return view('admin.editarNoticias');
     }
 }
