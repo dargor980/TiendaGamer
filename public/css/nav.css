@@ -16,3 +16,8 @@ html{
     min-height: 100%;
     position: relative;
 }
+@media (min-width: 768px) {
+    aside {
+        height: 100%;
+    }
+}

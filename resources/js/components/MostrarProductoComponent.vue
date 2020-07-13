@@ -5,10 +5,10 @@
             <hr>
             <ul class="list-group">
                 <li class="list-group-item" v-for="(item,index) in productos" :key="index" style="background-color: transparent;">
-                    <p>{{item.nombre}}</p>
-                    <p>{{item.descripcion}}</p>
-                    <P>{{item.precio_internet}}</p>
-                    <p>{{item.precio_tienda}}</p>
+                    <img :src="item.url_imagen" alt="" class="img-fluid">
+                    <h4 class="mt-2">{{item.nombre}}</h4>
+                    <h5 class="mt-2">Precio Internet: ${{item.precio_internet}}</h5>
+                    <h5 class="mt-2">Precio Tienda: ${{item.precio_tienda}}</h5>
                 </li>
             </ul>
         </div>
@@ -23,7 +23,7 @@ export default {
     data(){
         return{
             productos: [],
-            producto: {nombre:'',precio_internet: '', precio_tienda: '',descripcion:''}
+            producto: {nombre:'',precio_internet: '', precio_tienda: '',descripcion:'', url_imagen: ''}
         }
     },
     created(){

@@ -1,9 +1,6 @@
 <template>
     <div>
-        <footer class="page-footer font-small bg-dark text-light" 
-        style=" position: absolute;
-        bottom: 0;
-        width: 100%;">
+        <footer class="navbar navbar-fixed-bottom font-small bg-dark text-light mt-3">
             <div class="container-fluid text-md-left">
                 <h5>Visita nuestras Redes sociales</h5>
                 <div class="container">

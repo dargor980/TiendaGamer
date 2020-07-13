@@ -24,11 +24,11 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none d-lg-block">
             <div class="collapse navbar-collapse mr-auto">
                 <ul class="navbar-nav">
-                    <li class="nav-item"> <a href="" class="nav-link">Inicio</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Videojuegos</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Computación</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Geek</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"> <a href="/" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="videojuegos" class="nav-link">Videojuegos</a></li>
+                    <li class="nav-item"><a href="computacion" class="nav-link">Computación</a></li>
+                    <li class="nav-item"><a href="geek" class="nav-link">Geek</a></li>
+                    <li class="nav-item"><a href="contacto" class="nav-link">Contacto</a></li>
 
                 </ul>
             </div>

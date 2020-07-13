@@ -9,8 +9,8 @@
                 <div class="carousel-item active">
                     <img :src="item.url_imagen" alt="" class="d-block w-100" style="max-height:270px">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>{{item.nombre}}</h5>
-                        <p>{{item.precio_internet}}</p>
+                        <h5>{{item.titulo}}</h5>
+                        <p>{{item.descripcion}}</p>
                     </div>
                 </div>
         </div>
@@ -31,11 +31,11 @@ export default {
     data(){
         return{
             elementos: [],
-            elemento: {nombre: '', precio_internet: '', url_imagen:''}
+            elemento: {titulo: '', descripcion: '', url_imagen:''}
         }
     },
     created(){
-        axios.get('/destacado').then(res =>{
+        axios.get('/noticias').then(res =>{
             this.elementos=res.data;
         })
     }

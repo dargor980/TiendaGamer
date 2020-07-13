@@ -13,6 +13,8 @@ Vue.component('navbar', require('./components/NavbarComponent.vue').default);
 Vue.component('piepagina', require('./components/FooterComponent.vue').default);
 Vue.component('listadoproductos', require('./components/MostrarProductoComponent.vue').default);
 Vue.component('carrousel', require('./components/CarrouselComponent.vue').default);
+Vue.component('destacados', require('./components/MostrarProductosDestacadosComponent.vue').default);
+Vue.component('admin', require('./components/AdministracionComponents/AdministracionComponent.vue').default);
 const app = new Vue({
     el: '#app',
 });

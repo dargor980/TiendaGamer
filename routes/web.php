@@ -22,4 +22,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/productos', 'ProductoController');
+
 Route::get('/destacado','ProductoController@destacado');
+
+Route::get('/contacto','PagesController@viewContact');
+
+Route::resource('/noticias', 'CarrouselController');
+
+
+
