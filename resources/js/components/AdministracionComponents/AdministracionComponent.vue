@@ -147,6 +147,7 @@
     <div class="container-fluid">
       <contprincipal v-if="opcion==='home'"></contprincipal>
       <editnoticias v-if="opcion==='noticias'"></editnoticias>
+      <editdestacados v-if="opcion==='productos destacados'"></editdestacados>
 
      <footadmin></footadmin>
     </div>
