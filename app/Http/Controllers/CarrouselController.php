@@ -7,6 +7,10 @@ use App\Noticia;
 
 class CarrouselController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' =>['index']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -35,6 +39,7 @@ class CarrouselController extends Controller
      */
     public function store(Request $request)
     {
+        
         $noticia = new Noticia();
         $noticia->titulo=$request->titulo;
         $noticia->descripcion=$request->descripcion;
@@ -74,6 +79,7 @@ class CarrouselController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $noticia= Noticia::find($id);
         $noticia->titulo= $request->titulo;
         $noticia->descripcion= $request->descripcion;
@@ -93,4 +99,8 @@ class CarrouselController extends Controller
         $noticia= Noticia::find($id);
         $noticia->delete();
     }
+
+    
 }
+
+

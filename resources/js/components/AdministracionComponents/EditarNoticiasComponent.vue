@@ -27,7 +27,7 @@
                 </form>
             </div>
         </div>
-        <h3>Noticias</h3>
+        <h3 class="mt-3">Noticias</h3>
         <hr>
 
         <div class="card mb-2">
@@ -73,7 +73,7 @@ export default {
         }
     },
     created(){
-        axios.get('/noticias').then(res =>{
+        axios.get('/editnoticias').then(res =>{
             this.noticias=res.data;
         })
     },
@@ -87,13 +87,13 @@ export default {
             const params={titulo: this.noticia.titulo, descripcion: this.noticia.descripcion}
             this.noticia={titulo: '', descripcion:'', url_imagen:''}
             console.log(params)
-            axios.post('/noticias', params).then(res =>{
+            axios.post('/editnoticias', params).then(res =>{
                 this.noticias.push(res.data)
             })
         },
         editarNoticia(noticia){
             const params=this.noticia;
-            axios.put(`/noticias/${noticia.id}`,params).then(res =>{
+            axios.put(`/editnoticias/${noticia.id}`,params).then(res =>{
                 this.edit=false;
                 const index= this.noticias.findIndex(item=>item.id===noticia.id);
                 this.noticias[index]=res.data;
@@ -103,7 +103,7 @@ export default {
         eliminarNoticia(noticia,index){
             const confirmacion=confirm(`Esta seguro de querer eliminar la noticia ${noticia.titulo} ?`);
             if(confirmacion){
-                axios.delete(`/noticias/${noticia.id}`).then(()=>{
+                axios.delete(`/editnoticias/${noticia.id}`).then(()=>{
                     this.noticias.splice(index,1);
                 })
 

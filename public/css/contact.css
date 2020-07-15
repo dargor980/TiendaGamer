@@ -1,0 +1,11 @@
+body{
+    background-image: url('../img/smash2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.modal-content{
+    background-color: rgba(177, 9, 9, 0.795) !important;
+    color: white;
+    border-radius: 10px;
+}

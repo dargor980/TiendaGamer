@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <title>Inicio</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"> 
-    <link rel="stylesheet" href="{{asset('css/nav.css')}}">
-    <link rel="stylesheet" href="{{asset('css/contact.css')}}">
-    <title>Contacto</title>
+<link rel="stylesheet" href="{{asset('css/nav.css')}}">
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
     <div id="app">
         <navbar></navbar>
-        <contacto></contacto>
+        
         <piepagina></piepagina>
+        
+        
+        
     </div>
+    
 </body>
-
 </html>

@@ -7,15 +7,12 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"> 
     <link rel="stylesheet" href="{{asset('css/nav.css')}}">
-    <link rel="stylesheet" href="{{asset('css/contact.css')}}">
     <title>Contacto</title>
 </head>
 <body>
     <div id="app">
         <navbar></navbar>
-        <contacto></contacto>
         <piepagina></piepagina>
     </div>
 </body>
-
 </html>

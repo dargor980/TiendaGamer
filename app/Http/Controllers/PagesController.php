@@ -10,4 +10,16 @@ class PagesController extends Controller
     {
         return view('contact');
     }
+    public function viewVideojuegos()
+    {
+        return view('videojuegos');
+    }
+    public function viewGeek()
+    {
+        return view('geek');
+    }
+    public function viewComputacion()
+    {
+        return view('computacion');
+    }
 }

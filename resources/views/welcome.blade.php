@@ -13,6 +13,7 @@
     <div id="app">
         <navbar></navbar>
         <carrousel></carrousel>
+        <destacados></destacados>
         <listadoproductos></listadoproductos>
         <piepagina></piepagina>
         

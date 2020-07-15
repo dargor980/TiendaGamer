@@ -12,6 +12,11 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function __construct(){
+        $this->middleware('auth',['except' =>['index']]);
+    }
     public function index()
     {
        return Producto::all();
@@ -35,7 +40,18 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto= new Producto();
+        $producto->nombre = $request->nombre;
+        $producto->precio_internet = $request->precio_internet;
+        $producto->precio_tienda = $request->precio_tienda;
+        $producto->descripcion = $request->descripcion;
+        $producto->id_destacado = $request->id_destacado;
+        $producto->url_imagen = $request->url_imagen;
+        $producto->id_categoria = $request->id_categoria;
+
+        $producto->save();
+        return $producto;
+
     }
 
     /**
@@ -57,7 +73,7 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -69,7 +85,17 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $producto= Producto::find($id);
+        $producto->nombre= $request->nombre;
+        $producto->precio_internet= $request->precio_internet;
+        $producto->precio_tienda= $request->precio_tienda;
+        $producto->descripcion= $request->descripcion;
+        $producto->id_destacado= $request->id_destacado;
+        $producto->url_imagen= $request->url_imagen;
+        $producto->id_categoria= $request->id_categoria;
+
+        $producto->save();
+        return $producto;
     }
 
     /**
@@ -80,7 +106,8 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto= Producto::find($id);
+        $producto->delete();
     }
 
     public function destacado()

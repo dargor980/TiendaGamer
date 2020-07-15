@@ -5,8 +5,8 @@
                 <li v-for="(item,index) in elementos" :key="index" data-target="elemento" :data-slide-to="index" class="active"></li>
             </ol>
         
-        <div class="carousel-inner" v-for="(item,index) in elementos" :key="index">
-                <div class="carousel-item active">
+        <div class="carousel-inner">
+                <div class="carousel-item" v-bind:class="{active:index===0}" v-for="(item,index) in elementos" :key="index">
                     <img :src="item.url_imagen" alt="" class="d-block w-100" style="max-height:270px">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>{{item.titulo}}</h5>
@@ -35,7 +35,7 @@ export default {
         }
     },
     created(){
-        axios.get('/noticias').then(res =>{
+        axios.get('/editnoticias').then(res =>{
             this.elementos=res.data;
         })
     }
