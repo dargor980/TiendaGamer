@@ -55,7 +55,7 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Productos
+                  <a href="/productos">Productos
 
                   </a>
                 </li>
@@ -148,9 +148,11 @@
       <contprincipal v-if="opcion==='home'"></contprincipal>
       <editnoticias v-if="opcion==='noticias'"></editnoticias>
       <editdestacados v-if="opcion==='productos destacados'"></editdestacados>
-
-     <footadmin></footadmin>
+      
+     
     </div>
+    <footadmin></footadmin>
+    
   </main>
   <!-- page-content" -->
   

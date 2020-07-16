@@ -111,7 +111,13 @@ class ProductoController extends Controller
     }
 
     public function destacado()
-    {
+    {   
         return Producto::where('id_destacado',2)->get();
     }
+    
+    public function inventario()
+    {
+        return view('admin.inventario.maininventario');
+    }
+    
 }

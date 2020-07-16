@@ -2069,6 +2069,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2349,27 +2351,112 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       destacados: [],
+      categorias: [],
+      categoria: {
+        descripcion: ''
+      },
       destacado: {
         url_imagen: '',
         nombre: '',
         precio_internet: '',
         precio_tienda: '',
-        descripcion: ''
+        descripcion: '',
+        id_categoria: ''
       },
       addToDestacado: false,
       showFormBusqueda: false
     };
   },
   created: function created() {
-    axios.get();
+    var _this = this;
+
+    axios.get('/destacado').then(function (res) {
+      _this.destacados = res.data;
+    });
+    axios.get('/categoria').then(function (res) {
+      _this.categorias = res.data;
+    });
   },
   methods: {
     searchProducto: function searchProducto() {
       this.showFormBusqueda = true;
     },
     addDestacado: function addDestacado() {},
-    deleteToDestacado: function deleteToDestacado() {}
+    deleteToDestacado: function deleteToDestacado() {},
+    changeForm: function changeForm() {
+      this.showFormBusqueda = false;
+    }
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {};
+  },
+  created: function created() {},
+  methods: {}
 });
 
 /***/ }),
@@ -38517,24 +38604,29 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("main", { staticClass: "page-content" }, [
-        _c(
-          "div",
-          { staticClass: "container-fluid" },
-          [
-            _vm.opcion === "home" ? _c("contprincipal") : _vm._e(),
-            _vm._v(" "),
-            _vm.opcion === "noticias" ? _c("editnoticias") : _vm._e(),
-            _vm._v(" "),
-            _vm.opcion === "productos destacados"
-              ? _c("editdestacados")
-              : _vm._e(),
-            _vm._v(" "),
-            _c("footadmin")
-          ],
-          1
-        )
-      ])
+      _c(
+        "main",
+        { staticClass: "page-content" },
+        [
+          _c(
+            "div",
+            { staticClass: "container-fluid" },
+            [
+              _vm.opcion === "home" ? _c("contprincipal") : _vm._e(),
+              _vm._v(" "),
+              _vm.opcion === "noticias" ? _c("editnoticias") : _vm._e(),
+              _vm._v(" "),
+              _vm.opcion === "productos destacados"
+                ? _c("editdestacados")
+                : _vm._e()
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("footadmin")
+        ],
+        1
+      )
     ])
   ])
 }
@@ -38600,7 +38692,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "sidebar-submenu" }, [
         _c("ul", [
           _c("li", [
-            _c("a", { attrs: { href: "#" } }, [
+            _c("a", { attrs: { href: "/productos" } }, [
               _vm._v("Productos\n\n                  ")
             ])
           ]),
@@ -38993,7 +39085,7 @@ var render = function() {
     _c("hr"),
     _vm._v(" "),
     _vm.addToDestacado
-      ? _c("div", { staticClass: "card mb-2" }, [
+      ? _c("div", { staticClass: "card mb-2", attrs: { id: "adddestacado" } }, [
           _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
@@ -39002,7 +39094,29 @@ var render = function() {
               _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
-              _vm._m(1),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-3" }, [
+                  _c("h6", [_vm._v("Categoría")]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      staticClass: "form-control",
+                      attrs: { name: "", id: "" }
+                    },
+                    _vm._l(_vm.categorias, function(item, index) {
+                      return _c(
+                        "option",
+                        { key: index, domProps: { value: item.id } },
+                        [_vm._v(_vm._s(item.descripcion))]
+                      )
+                    }),
+                    0
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(1)
+              ]),
               _vm._v(" "),
               _c(
                 "button",
@@ -39013,9 +39127,19 @@ var render = function() {
                 [_c("i", { staticClass: "fas fa-search" }), _vm._v(" Buscar")]
               ),
               _vm._v(" "),
-              _c("button", { staticClass: "btn btn-primary mt-3" }, [
-                _vm._v("Cancelar")
-              ])
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary mt-3",
+                  on: {
+                    click: function($event) {
+                      _vm.addToDestacado = false
+                      _vm.showFormBusqueda = false
+                    }
+                  }
+                },
+                [_vm._v("Cancelar")]
+              )
             ])
           ])
         ])
@@ -39034,19 +39158,64 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
         _c(
-          "button",
+          "a",
           {
-            staticClass: "btn btn-primary mb-3  mt-2",
-            on: {
-              click: function($event) {
-                _vm.addToDestacado = true
-              }
-            }
+            staticStyle: { "text-decoration": "none", color: "white" },
+            attrs: { href: "#adddestacado" }
           },
-          [_c("i", { staticClass: "fa fa-plus-circle" }), _vm._v(" Añadir")]
+          [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary mb-3  mt-2",
+                on: {
+                  click: function($event) {
+                    _vm.addToDestacado = true
+                  }
+                }
+              },
+              [_c("i", { staticClass: "fa fa-plus-circle" }), _vm._v(" Añadir")]
+            )
+          ]
         ),
         _vm._v(" "),
-        _vm._m(5)
+        _c(
+          "table",
+          {
+            staticClass: "table table-stripped table-bordered table-responsive",
+            staticStyle: { widht: "100%" }
+          },
+          [
+            _vm._m(5),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.destacados, function(item, index) {
+                return _c("tr", { key: index }, [
+                  _c("td", [
+                    _c("img", {
+                      staticClass: "img-fluid",
+                      attrs: { src: item.url_imagen, alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.nombre))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.id_categoria))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.precio_tienda))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.precio_internet))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.descripcion))]),
+                  _vm._v(" "),
+                  _vm._m(6, true)
+                ])
+              }),
+              0
+            )
+          ]
+        )
       ])
     ])
   ])
@@ -39064,30 +39233,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-3" }, [
-        _c("h6", [_vm._v("Categoría")]),
-        _vm._v(" "),
-        _c(
-          "select",
-          { staticClass: "form-control", attrs: { name: "", id: "" } },
-          [
-            _c("option", { attrs: { value: "" } }),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "" } }, [_vm._v("aaaaa")])
-          ]
-        )
-      ]),
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("h6", [_vm._v("Precio")]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-3" }, [
-        _c("h6", [_vm._v("Precio")]),
-        _vm._v(" "),
-        _c(
-          "select",
-          { staticClass: "form-control", attrs: { name: "", id: "" } },
-          [_c("option", { attrs: { value: "" } }, [_vm._v("aaaa")])]
-        )
-      ])
+      _c(
+        "select",
+        { staticClass: "form-control", attrs: { name: "", id: "" } },
+        [_c("option", { attrs: { value: "" } }, [_vm._v("aaaa")])]
+      )
     ])
   },
   function() {
@@ -39106,7 +39259,7 @@ var staticRenderFns = [
       _c(
         "table",
         {
-          staticClass: "table table-stripped table-bordered",
+          staticClass: "table table-stripped table-bordered table-hover",
           staticStyle: { widht: "100%" }
         },
         [
@@ -39157,55 +39310,178 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "table",
-      {
-        staticClass: "table table-stripped table-bordered",
-        staticStyle: { widht: "100%" }
-      },
-      [
-        _c("thead", [
-          _c("tr", [
-            _c("th", [_vm._v("Imagen")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Producto")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Categoría")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Precio Tienda")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Precio Internet")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Descripción")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Acción")])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Imagen")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Producto")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Categoría")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Precio Tienda")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Precio Internet")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Descripción")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Acción")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("button", { staticClass: "btn btn-danger btn-sm" }, [
+        _c("i", { staticClass: "fa fa-trash" }),
+        _vm._v(" Eliminar")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=template&id=1f168710&":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=template&id=1f168710& ***!
+  \************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("footer", { staticClass: "text-center" }, [
+        _c("div", { staticClass: "mb-2" }, [
+          _c("small", [
+            _vm._v("\n        © 2020 Tienda Gamer. Created by "),
+            _c("a", { attrs: { href: "https://github.com/dargor980" } }, [
+              _vm._v("Germán contreras.")
+            ])
           ])
         ]),
         _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td"),
-            _vm._v(" "),
-            _c("td"),
-            _vm._v(" "),
-            _c("td"),
-            _vm._v(" "),
-            _c("td"),
-            _vm._v(" "),
-            _c("td"),
-            _vm._v(" "),
-            _c("td"),
-            _vm._v(" "),
-            _c("td", [
-              _c("button", { staticClass: "btn btn-danger btn-sm" }, [
-                _c("i", { staticClass: "fa fa-trash" }),
-                _vm._v(" Eliminar")
+        _c("div", [
+          _c(
+            "a",
+            {
+              attrs: { href: "https://github.com/dargor980", target: "_blank" }
+            },
+            [
+              _c("img", {
+                attrs: {
+                  alt: "GitHub followers",
+                  src:
+                    "https://img.shields.io/github/followers/dargor980?style=social"
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://twitter.com/azouaoui_med",
+                target: "_blank"
+              }
+            },
+            [
+              _c("img", {
+                attrs: {
+                  alt: "Twitter Follow",
+                  src:
+                    "https://img.shields.io/twitter/follow/azouaoui_med?label=twitter&style=social"
+                }
+              })
+            ]
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=template&id=01365853&":
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=template&id=01365853& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "div",
+        { staticClass: "navbar navbar-expand-lg navbar-dark bg-dark" },
+        [
+          _c("div", { staticClass: "navbar-brand" }, [_vm._v("Inventario")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "collapse navbar-collapse mr-auto" }, [
+            _c("ul", { staticClass: "navbar-nav" }, [
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link", attrs: { href: "/inventario" } },
+                  [_vm._v("Inicio")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link", attrs: { href: "productos" } },
+                  [_vm._v("Productos")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c("a", { staticClass: "nav-link", attrs: { href: "stock" } }, [
+                  _vm._v("Stock")
+                ])
               ])
             ])
           ])
-        ])
-      ]
-    )
+        ]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -52193,6 +52469,8 @@ Vue.component('admin', __webpack_require__(/*! ./components/AdministracionCompon
 Vue.component('editnoticias', __webpack_require__(/*! ./components/AdministracionComponents/EditarNoticiasComponent.vue */ "./resources/js/components/AdministracionComponents/EditarNoticiasComponent.vue")["default"]);
 Vue.component('contprincipal', __webpack_require__(/*! ./components/AdministracionComponents/MainContentComponent.vue */ "./resources/js/components/AdministracionComponents/MainContentComponent.vue")["default"]);
 Vue.component('editdestacados', __webpack_require__(/*! ./components/AdministracionComponents/EditarProductosDestacadosComponent.vue */ "./resources/js/components/AdministracionComponents/EditarProductosDestacadosComponent.vue")["default"]);
+Vue.component('footadmin', __webpack_require__(/*! ./components/AdministracionComponents/FooterAdminComponent.vue */ "./resources/js/components/AdministracionComponents/FooterAdminComponent.vue")["default"]);
+Vue.component('inventario', __webpack_require__(/*! ./components/AdministracionComponents/InventarioComponents/InventarioComponent.vue */ "./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue")["default"]);
 var app = new Vue({
   el: '#app'
 });
@@ -52463,6 +52741,144 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditarProductosDestacadosComponent_vue_vue_type_template_id_4fa0246e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditarProductosDestacadosComponent_vue_vue_type_template_id_4fa0246e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/FooterAdminComponent.vue":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/FooterAdminComponent.vue ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FooterAdminComponent_vue_vue_type_template_id_1f168710___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FooterAdminComponent.vue?vue&type=template&id=1f168710& */ "./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=template&id=1f168710&");
+/* harmony import */ var _FooterAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FooterAdminComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FooterAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FooterAdminComponent_vue_vue_type_template_id_1f168710___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FooterAdminComponent_vue_vue_type_template_id_1f168710___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/AdministracionComponents/FooterAdminComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./FooterAdminComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterAdminComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=template&id=1f168710&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=template&id=1f168710& ***!
+  \******************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterAdminComponent_vue_vue_type_template_id_1f168710___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./FooterAdminComponent.vue?vue&type=template&id=1f168710& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/FooterAdminComponent.vue?vue&type=template&id=1f168710&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterAdminComponent_vue_vue_type_template_id_1f168710___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterAdminComponent_vue_vue_type_template_id_1f168710___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _InventarioComponent_vue_vue_type_template_id_01365853___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InventarioComponent.vue?vue&type=template&id=01365853& */ "./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=template&id=01365853&");
+/* harmony import */ var _InventarioComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventarioComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InventarioComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InventarioComponent_vue_vue_type_template_id_01365853___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _InventarioComponent_vue_vue_type_template_id_01365853___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InventarioComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./InventarioComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InventarioComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=template&id=01365853&":
+/*!**************************************************************************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=template&id=01365853& ***!
+  \**************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InventarioComponent_vue_vue_type_template_id_01365853___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./InventarioComponent.vue?vue&type=template&id=01365853& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=template&id=01365853&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InventarioComponent_vue_vue_type_template_id_01365853___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InventarioComponent_vue_vue_type_template_id_01365853___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

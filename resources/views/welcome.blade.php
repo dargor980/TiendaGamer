@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inicio</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"> 
-<link rel="stylesheet" href="{{asset('css/nav.css')}}">
+    <link rel="stylesheet" href="{{asset('css/nav.css')}}">
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>

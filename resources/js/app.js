@@ -20,6 +20,8 @@ Vue.component('admin', require('./components/AdministracionComponents/Administra
 Vue.component('editnoticias', require('./components/AdministracionComponents/EditarNoticiasComponent.vue').default);
 Vue.component('contprincipal', require('./components/AdministracionComponents/MainContentComponent.vue').default);
 Vue.component('editdestacados', require('./components/AdministracionComponents/EditarProductosDestacadosComponent.vue').default);
+Vue.component('footadmin', require('./components/AdministracionComponents/FooterAdminComponent.vue').default);
+Vue.component('inventario', require('./components/AdministracionComponents/InventarioComponents/InventarioComponent.vue').default);
 
 const app = new Vue({
     el: '#app',
