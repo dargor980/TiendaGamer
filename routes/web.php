@@ -38,3 +38,7 @@ Route::get('inventario/stock','InventarioController@stock');
 
 Route::get('/editarnoticias','AdminController@showEditarNoticias')->middleware('auth');
 
+Route::post('/destacado/search','ProductoController@searchProducto');
+
+Route::put('/destacado/edit','ProductoController@addToDestacado');
+

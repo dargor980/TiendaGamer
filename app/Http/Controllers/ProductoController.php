@@ -15,7 +15,7 @@ class ProductoController extends Controller
 
 
     public function __construct(){
-        $this->middleware('auth',['except' =>['index']]);
+        $this->middleware('auth',['except' =>['index','destacado']]);
     }
     public function index()
     {
@@ -114,10 +114,22 @@ class ProductoController extends Controller
     {   
         return Producto::where('id_destacado',2)->get();
     }
+
+    public function searchProducto(Request $request){
+        return Producto::where('id_categoria',$request->descripcion)->where('id_destacado','=',1)->get();
+    }
     
     public function inventario()
     {
         return view('admin.inventario.maininventario');
+    }
+
+    public function addToDestacado(Request $request,$id){
+        $producto= Producto::find($id);
+        $producto->id_destacado=2;
+        $producto->save();
+
+        return $producto;
     }
     
 }
