@@ -2376,6 +2376,51 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2401,7 +2446,7 @@ __webpack_require__.r(__webpack_exports__);
         max: 20000
       }, {
         min: 20000,
-        max: 10000
+        max: 100000
       }, {
         min: 100000,
         max: 150000
@@ -2425,9 +2470,12 @@ __webpack_require__.r(__webpack_exports__);
         max: 4500000
       }],
       precio: '',
-      selectedItem: '',
+      good: '',
+      selectedItem: [],
+      indice: '',
       addToDestacado: false,
-      showFormBusqueda: false
+      showFormBusqueda: false,
+      voidSearch: false
     };
   },
   created: function created() {
@@ -2444,19 +2492,38 @@ __webpack_require__.r(__webpack_exports__);
     searchProducto: function searchProducto() {
       var _this2 = this;
 
-      this.showFormBusqueda = true;
-      console.log(this.categoria);
       var param = {
         descripcion: this.categoria
       };
       axios.post('/destacado/search', param).then(function (res) {
         _this2.resultadoBusqueda = res.data;
+
+        if (_this2.resultadoBusqueda.length !== 0) {
+          _this2.showFormBusqueda = true;
+        } else {
+          _this2.voidSearch = true;
+        }
       });
     },
-    addDestacado: function addDestacado(selectedItem) {},
-    deleteToDestacado: function deleteToDestacado() {},
+    addDestacado: function addDestacado(selectedItem, indice) {
+      var _this3 = this;
+
+      var param = selectedItem;
+      axios.put("/destacado/edit", param).then(function (res) {
+        _this3.destacados.push(res.data);
+
+        _this3.resultadoBusqueda.splice(indice, 1);
+
+        _this3.good = true;
+      });
+    },
+    deleteToDestacado: function deleteToDestacado() {
+      axios.put();
+    },
     changeForm: function changeForm() {
       this.showFormBusqueda = false;
+      this.addToDestacado = false;
+      this.voidSearch = false;
     }
   }
 });
@@ -39124,6 +39191,23 @@ var render = function() {
       ? _c("div", { staticClass: "card mb-2", attrs: { id: "adddestacado" } }, [
           _vm._m(0),
           _vm._v(" "),
+          _vm.good
+            ? _c(
+                "div",
+                {
+                  staticClass:
+                    "alert alert-success mt-2 ml-2 mr-2 alert-dismissible fade show",
+                  attrs: { role: "alert" }
+                },
+                [
+                  _vm._v(
+                    "\n           Producto añadido exitosamente \n           "
+                  ),
+                  _vm._m(1)
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _c(
               "form",
@@ -39243,8 +39327,7 @@ var render = function() {
                     staticClass: "btn btn-primary mt-3",
                     on: {
                       click: function($event) {
-                        _vm.addToDestacado = false
-                        _vm.showFormBusqueda = false
+                        return _vm.changeForm()
                       }
                     }
                   },
@@ -39258,7 +39341,7 @@ var render = function() {
     _vm._v(" "),
     _vm.showFormBusqueda
       ? _c("div", { staticClass: "card my-3" }, [
-          _vm._m(1),
+          _vm._m(2),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _c(
@@ -39268,7 +39351,7 @@ var render = function() {
                 staticStyle: { widht: "100%" }
               },
               [
-                _vm._m(2),
+                _vm._m(3),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -39312,7 +39395,8 @@ var render = function() {
                             },
                             on: {
                               click: function($event) {
-                                return _vm.addDestacado(item.id)
+                                _vm.selectedItem = item
+                                _vm.indice = index
                               }
                             }
                           },
@@ -39328,28 +39412,132 @@ var render = function() {
                 )
               ]
             )
-          ]),
-          _vm._v(" "),
-          _vm._m(3)
+          ])
         ])
       : _vm._e(),
     _vm._v(" "),
+    _vm.voidSearch
+      ? _c("div", { staticClass: "card my-3" }, [
+          _vm._m(4),
+          _vm._v(" "),
+          _vm._m(5)
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "staticBackdrop",
+          "data-backdrop": "static",
+          "data-keyboard": "false",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "staticBackdropLabel",
+          "aria-hidden": "false"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(6),
+            _vm._v(" "),
+            _vm._m(7),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger",
+                  attrs: { type: "button", "data-dismiss": "modal" }
+                },
+                [_vm._v("Cancelar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  attrs: { type: "button", "data-dismiss": "modal" },
+                  on: {
+                    click: function($event) {
+                      return _vm.addDestacado(_vm.selectedItem, _vm.indice)
+                    }
+                  }
+                },
+                [_vm._v("Confirmar")]
+              )
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "eliminar",
+          "data-backdrop": "static",
+          "data-keyboard": "false",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "eliminarLabel",
+          "aria-hidden": "false"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(8),
+            _vm._v(" "),
+            _vm._m(9),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger",
+                  attrs: { type: "button", "data-dismiss": "modal" }
+                },
+                [_vm._v("Cancelar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  attrs: { type: "button", "data-dismiss": "modal" },
+                  on: { click: function($event) {} }
+                },
+                [_vm._v("Confirmar")]
+              )
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
     _c("div", { staticClass: "card my-3" }, [
-      _vm._m(4),
+      _vm._m(10),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary mb-3  mt-2",
-            on: {
-              click: function($event) {
-                _vm.addToDestacado = true
+        _c("a", { attrs: { href: "#adddestacado" } }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary mb-3  mt-2",
+              on: {
+                click: function($event) {
+                  _vm.addToDestacado = true
+                }
               }
-            }
-          },
-          [_c("i", { staticClass: "fa fa-plus-circle" }), _vm._v(" Añadir")]
-        ),
+            },
+            [_c("i", { staticClass: "fa fa-plus-circle" }), _vm._v(" Añadir")]
+          )
+        ]),
         _vm._v(" "),
         _c(
           "table",
@@ -39358,7 +39546,7 @@ var render = function() {
             staticStyle: { widht: "100%" }
           },
           [
-            _vm._m(5),
+            _vm._m(11),
             _vm._v(" "),
             _c(
               "tbody",
@@ -39389,7 +39577,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.descripcion))]),
                   _vm._v(" "),
-                  _vm._m(6, true)
+                  _vm._m(12, true)
                 ])
               }),
               0
@@ -39408,6 +39596,23 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header" }, [
       _c("h4", [_vm._v("Agregar producto destacado")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "alert",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
   },
   function() {
     var _vm = this
@@ -39443,72 +39648,92 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "modal fade",
-        attrs: {
-          id: "staticBackdrop",
-          "data-backdrop": "static",
-          "data-keyboard": "false",
-          tabindex: "-1",
-          role: "dialog",
-          "aria-labelledby": "staticBackdropLabel",
-          "aria-hidden": "false"
-        }
-      },
-      [
-        _c("div", { staticClass: "modal-dialog" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c("h5", { staticClass: "modal-tittle" }, [_vm._v("Confirmar")]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: {
-                    type: "button",
-                    "data-dismiss": "modal",
-                    "aria-label": "Close"
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("h6", [
-                _vm._v(
-                  "¿Está seguro que quiere añadir el producto a la sección Destacados?"
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-danger",
-                  attrs: { type: "button", "data-dismiss": "modal" }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "btn btn-success", attrs: { type: "button" } },
-                [_vm._v("Confirmar")]
-              )
-            ])
-          ])
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h4", [_vm._v("Resultados de Búsqueda")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c(
+        "div",
+        {
+          staticClass: "alert alert-warning text-center",
+          attrs: { role: "alert" }
+        },
+        [_c("strong", [_vm._v("No se han encontrado Productos.")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h5", { staticClass: "modal-tittle" }, [_vm._v("Confirmar")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-body" }, [
+      _c("h6", [
+        _vm._v(
+          "¿Está seguro que quiere añadir el producto a la sección Destacados?"
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h5", { staticClass: "modal-tittle" }, [
+        _vm._v("Eliminar de destacados")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-body" }, [
+      _c("h6", [
+        _vm._v(
+          "¿Está seguro de quitar el producto de la sección de Destacados?"
+        )
+      ])
+    ])
   },
   function() {
     var _vm = this
@@ -39545,10 +39770,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("td", [
-      _c("button", { staticClass: "btn btn-danger btn-sm" }, [
-        _c("i", { staticClass: "fa fa-trash" }),
-        _vm._v(" Eliminar")
-      ])
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger btn-sm",
+          attrs: { "data-toggle": "modal", "data-target": "#eliminar" }
+        },
+        [_c("i", { staticClass: "fa fa-trash" }), _vm._v(" Eliminar")]
+      )
     ])
   }
 ]

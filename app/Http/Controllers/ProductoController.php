@@ -124,8 +124,8 @@ class ProductoController extends Controller
         return view('admin.inventario.maininventario');
     }
 
-    public function addToDestacado(Request $request,$id){
-        $producto= Producto::find($id);
+    public function addToDestacado(Request $request){
+        $producto= Producto::find($request->id);
         $producto->id_destacado=2;
         $producto->save();
 

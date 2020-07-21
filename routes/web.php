@@ -11,6 +11,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::put('/destacado/edit','ProductoController@addToDestacado');
+
 Route::resource('/productos', 'ProductoController');
 
 Route::get('/inventario','ProductoController@inventario');
@@ -40,5 +42,5 @@ Route::get('/editarnoticias','AdminController@showEditarNoticias')->middleware('
 
 Route::post('/destacado/search','ProductoController@searchProducto');
 
-Route::put('/destacado/edit','ProductoController@addToDestacado');
+
 
