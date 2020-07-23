@@ -26,6 +26,11 @@
           <li class="header-menu">
             <span>Administración</span>
           </li>
+          <li class="header-menu">
+            <a href="inventario" target="blank">
+              <i class="fa fa-shopping-cart"></i>
+              <span>Inventario</span></a>
+          </li>
           <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fa-tachometer-alt"></i>
@@ -46,28 +51,11 @@
               </ul>
             </div>
           </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-shopping-cart"></i>
-              <span>Inventario</span>
+          
+              
              <!-- <span class="badge badge-pill badge-danger">3</span>  -->
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="/productos">Productos
-
-                  </a>
-                </li>
-                <li>
-                  <a href="#">Ordenes de compra</a>
-                </li>
-                <li>
-                  <a href="#">Credit cart</a>
-                </li>
-              </ul>
-            </div>
-          </li>
+           
+           
           <li class="sidebar-dropdown">
             <a href="#">
               <i class="fa fa-truck"></i>
@@ -165,16 +153,14 @@
 export default {
     data(){
         return{
-          opcion:'home'
+          opcion:'home',
         }
     },
     created(){
       
     },
     methods:{
-      actdiv(){
-
-      }
+      
     }
     
 }

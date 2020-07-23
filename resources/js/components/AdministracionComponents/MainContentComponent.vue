@@ -1,20 +1,22 @@
 <template>
     <div>
-        <h2>Bienvenido</h2>
+        <h2>Bienvenido {{user}}</h2>
         <hr>
  
    </div>
 </template>
 
 <script>
-import EventBus from '../../bus.js'
 export default {
     data(){
         return{
-            seccion:''
+            user:''
         }
     },
     created(){
+        axios.get('/name').then(res =>{
+          this.user=res.data;
+        })
         
     },
     methods:{

@@ -10,6 +10,23 @@
                </ul>
            </div>
         </div>
+        <main>
+            <div class="container my-3">
+                <div class="row justify-content-center">
+                    <div class="col-md-11">
+                        <div class="card" style="border-radius:15px;">
+                            <div class="card-header">
+                                <h3>Inventario</h3> 
+                                <hr>
+                            </div>
+                            <div class="card-header">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
         
         
     </div>

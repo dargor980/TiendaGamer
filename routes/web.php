@@ -11,7 +11,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/name','HomeController@getName');
+
 Route::put('/destacado/edit','ProductoController@addToDestacado');
+
+Route::put('/destacado/remove','ProductoController@removeToDestacado');
 
 Route::resource('/productos', 'ProductoController');
 
@@ -34,9 +38,6 @@ Route::resource('/categoria','CategoriasController');
 Route::get('/inventario/productos','InventarioController@productos');
 
 Route::get('inventario/stock','InventarioController@stock');
-
-
-
 
 Route::get('/editarnoticias','AdminController@showEditarNoticias')->middleware('auth');
 

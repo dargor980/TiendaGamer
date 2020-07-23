@@ -1,0 +1,13 @@
+body {
+    background-image: url('../img/wallpapergenerico.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
+div.card{
+    background-color: rgba(230, 6, 6, 0.774) !important;
+    color: white;
+}
+

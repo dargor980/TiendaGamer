@@ -11,13 +11,13 @@
            <!--alert producto añadido (good ending :v)-->
            <div class="alert alert-success mt-2 ml-2 mr-2 alert-dismissible fade show" role="alert" v-if="good">
                Producto añadido exitosamente 
-               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="good=false;">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
 
-           <!--formulatio de búsqueda--> 
+           <!--formulario de búsqueda--> 
            <div class="card-body">
                <form @submit.prevent="searchProducto()">
                    <h5>Buscar producto</h5>
@@ -26,6 +26,7 @@
                        <div class="col-md-3">
                            <h6>Categoría</h6>
                            <select name="category" id="" class="form-control" v-model="categoria">
+                               <option value="todas">Todas</option>
                                <option :value="item.id" v-for="(item,index) in categorias" :key="index" >{{item.descripcion}}</option>
                               
                            </select>
@@ -50,7 +51,7 @@
                </div>
                <div class="card-body">
                    <table class="table table-stripped table-bordered table-hover" style="widht:100%">
-                       <thead>
+                       <thead class="thead-dark">
                            <tr>
                                <th>Imagen</th>
                                <th>Producto</th>
@@ -127,7 +128,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-success" @click="" data-dismiss="modal">Confirmar</button>
+                        <button type="button" class="btn btn-success" @click="deleteToDestacado(selectedItem,indice)" data-dismiss="modal">Confirmar</button>
                     </div>
                 </div>
             </div>
@@ -142,7 +143,7 @@
                 <a href="#adddestacado"><button class="btn btn-primary mb-3  mt-2" @click="addToDestacado=true"><i class="fa fa-plus-circle"></i> Añadir</button></a>
                 <table class="table table-stripped table-bordered table-responsive" style="widht:100%">
                     
-                     <thead>
+                     <thead class="thead-dark">
                            <tr>
                                <th>Imagen</th>
                                <th>Producto</th>
@@ -161,7 +162,7 @@
                                <td>{{item.precio_tienda}}</td>
                                <td>{{item.precio_internet}}</td>
                                <td>{{item.descripcion}}</td>
-                               <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#eliminar"><i class="fa fa-trash"></i> Eliminar</button></td>
+                               <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#eliminar" @click="selectedItem=item;indice=index"><i class="fa fa-trash"></i> Eliminar</button></td>
                            </tr>
                        </tbody>
                 </table>
@@ -224,8 +225,11 @@ export default {
 
             })
         },
-        deleteToDestacado(){
-            axios.put()
+        deleteToDestacado(selectedItem,indice){
+            const param=selectedItem
+            axios.put('/destacado/remove',param).then(res =>{
+                this.destacados.splice(indice,1)
+            })
         },
         changeForm(){
             this.showFormBusqueda=false;

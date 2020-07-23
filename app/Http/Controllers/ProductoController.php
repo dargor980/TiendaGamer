@@ -116,6 +116,10 @@ class ProductoController extends Controller
     }
 
     public function searchProducto(Request $request){
+        if($request->descripcion=='todas')
+        {
+            return Producto::where('id_destacado','=',1)->get();
+        }
         return Producto::where('id_categoria',$request->descripcion)->where('id_destacado','=',1)->get();
     }
     
@@ -127,6 +131,14 @@ class ProductoController extends Controller
     public function addToDestacado(Request $request){
         $producto= Producto::find($request->id);
         $producto->id_destacado=2;
+        $producto->save();
+
+        return $producto;
+    }
+
+    public function removeToDestacado(Request $request){
+        $producto= Producto::find($request->id);
+        $producto->id_destacado=1;
         $producto->save();
 
         return $producto;
