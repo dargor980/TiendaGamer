@@ -2556,10 +2556,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2584,6 +2584,114 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {};
+  },
+  created: function created() {},
+  methods: {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -39882,6 +39990,252 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=template&id=6e0b41b6&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=template&id=6e0b41b6& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "container my-3" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col" }, [
+          _c(
+            "div",
+            { staticClass: "card", staticStyle: { "border-radius": "15px" } },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "row" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xs-12 col-md-4 my-3",
+                      on: { click: function($event) {} }
+                    },
+                    [_vm._m(2)]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(3)
+                ])
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h3", { staticClass: "mt-3 ml-3" }, [_vm._v("Inventario")]),
+      _vm._v(" "),
+      _c("hr")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-xs-12 col-md-4 my-3" }, [
+      _c(
+        "div",
+        {
+          staticClass: "card ml-2 mr-2 option",
+          staticStyle: { background: "linear-gradient(0,green,white)" }
+        },
+        [
+          _c("div", { staticClass: "card-img-top elemento" }, [
+            _c("img", {
+              staticClass: "img-fluid imagen",
+              attrs: { src: "img/caja.png", alt: "" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-2 col-md-2 my-3" }, [
+              _c("span", { staticClass: "ml-3" }, [
+                _c("i", {
+                  staticClass: "fas fa-plus-circle",
+                  staticStyle: { "font-size": "30px" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-10 col-md-10" }, [
+              _c("h3", { staticClass: "mt-3" }, [_vm._v("Añadir producto")])
+            ])
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "card ml-2 mr-2 elemento option",
+        staticStyle: { "background-color": "red" }
+      },
+      [
+        _c("div", { staticClass: "card-img-top text-center imagen" }, [
+          _c("img", {
+            staticStyle: { "max-height": "178px" },
+            attrs: { src: "img/camion-de-reparto.png", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "row",
+            staticStyle: { "background-color": "#d50000" }
+          },
+          [
+            _c("div", { staticClass: "col-sm-2 col-md-2 my-3" }, [
+              _c("span", { staticClass: "ml-3" }, [
+                _c("i", {
+                  staticClass: "fas fa-map-marker-alt",
+                  staticStyle: { "font-size": "30px" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-2 col-md-10" }, [
+              _c("h3", { staticClass: "mt-3" }, [_vm._v("Consultar despachos")])
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-xs-12 col-md-4 my-3" }, [
+      _c("div", { staticClass: "card ml-2 -mr-2 option bg-primary option" }, [
+        _c("div", { staticClass: "card-img-top elemento" }, [
+          _c("img", {
+            staticClass: "imagen",
+            staticStyle: { height: "178px", width: "326px" },
+            attrs: { src: "img/inventario.jpg", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-xs-2 col-md-2 my-3" }, [
+            _c("span", { staticClass: "ml-3" }, [
+              _c("i", {
+                staticClass: "fas fa-clipboard-list",
+                staticStyle: { "font-size": "30px" }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-xs-10 col-md-10" }, [
+            _c("h3", { staticClass: "mt-3" }, [_vm._v("Consultar stock")])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=template&id=400e4256&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=template&id=400e4256& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { staticClass: "container my-3" }, [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col" }, [
+            _c(
+              "div",
+              { staticClass: "card", staticStyle: { "border-radius": "15px" } },
+              [
+                _c("div", { staticClass: "card-header" }, [
+                  _c("h3", { staticClass: "mt-3 ml-3" }, [_vm._v("Productos")]),
+                  _vm._v(" "),
+                  _c("nav", { attrs: { "aria-label": "breadcrumb" } }, [
+                    _c("ol", { staticClass: "breadcrumb" }, [
+                      _c("li", { staticClass: "breadcrumb-item" }, [
+                        _c("a", { attrs: { href: "/inventario" } }, [
+                          _c("i", { staticClass: "fas fa-home" })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        {
+                          staticClass: "breadcrumb-item active",
+                          attrs: { "aria-current": "productos" }
+                        },
+                        [_vm._v("Productos")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("hr")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" })
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=template&id=01365853&":
 /*!********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue?vue&type=template&id=01365853& ***!
@@ -39909,7 +40263,7 @@ var staticRenderFns = [
         "div",
         { staticClass: "navbar navbar-expand-lg navbar-dark bg-dark" },
         [
-          _c("div", { staticClass: "navbar-brand" }, [_vm._v("Inventario")]),
+          _c("div", { staticClass: "navbar-brand" }, [_vm._v("Tienda Qlia")]),
           _vm._v(" "),
           _c("div", { staticClass: "collapse navbar-collapse mr-auto" }, [
             _c("ul", { staticClass: "navbar-nav" }, [
@@ -39945,32 +40299,7 @@ var staticRenderFns = [
             ])
           ])
         ]
-      ),
-      _vm._v(" "),
-      _c("main", [
-        _c("div", { staticClass: "container my-3" }, [
-          _c("div", { staticClass: "row justify-content-center" }, [
-            _c("div", { staticClass: "col-md-11" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "card",
-                  staticStyle: { "border-radius": "15px" }
-                },
-                [
-                  _c("div", { staticClass: "card-header" }, [
-                    _c("h3", [_vm._v("Inventario")]),
-                    _vm._v(" "),
-                    _c("hr")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-header" })
-                ]
-              )
-            ])
-          ])
-        ])
-      ])
+      )
     ])
   }
 ]
@@ -52943,6 +53272,8 @@ Vue.component('contprincipal', __webpack_require__(/*! ./components/Administraci
 Vue.component('editdestacados', __webpack_require__(/*! ./components/AdministracionComponents/EditarProductosDestacadosComponent.vue */ "./resources/js/components/AdministracionComponents/EditarProductosDestacadosComponent.vue")["default"]);
 Vue.component('footadmin', __webpack_require__(/*! ./components/AdministracionComponents/FooterAdminComponent.vue */ "./resources/js/components/AdministracionComponents/FooterAdminComponent.vue")["default"]);
 Vue.component('inventario', __webpack_require__(/*! ./components/AdministracionComponents/InventarioComponents/InventarioComponent.vue */ "./resources/js/components/AdministracionComponents/InventarioComponents/InventarioComponent.vue")["default"]);
+Vue.component('invproducto', __webpack_require__(/*! ./components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue */ "./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue")["default"]);
+Vue.component('invhome', __webpack_require__(/*! ./components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue */ "./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue")["default"]);
 var app = new Vue({
   el: '#app'
 });
@@ -53265,6 +53596,144 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterAdminComponent_vue_vue_type_template_id_1f168710___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterAdminComponent_vue_vue_type_template_id_1f168710___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _InvHomeComponent_vue_vue_type_template_id_6e0b41b6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvHomeComponent.vue?vue&type=template&id=6e0b41b6& */ "./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=template&id=6e0b41b6&");
+/* harmony import */ var _InvHomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InvHomeComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InvHomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InvHomeComponent_vue_vue_type_template_id_6e0b41b6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _InvHomeComponent_vue_vue_type_template_id_6e0b41b6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InvHomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./InvHomeComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InvHomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=template&id=6e0b41b6&":
+/*!***********************************************************************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=template&id=6e0b41b6& ***!
+  \***********************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InvHomeComponent_vue_vue_type_template_id_6e0b41b6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./InvHomeComponent.vue?vue&type=template&id=6e0b41b6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue?vue&type=template&id=6e0b41b6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InvHomeComponent_vue_vue_type_template_id_6e0b41b6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InvHomeComponent_vue_vue_type_template_id_6e0b41b6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue ***!
+  \********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _InvProductoComponent_vue_vue_type_template_id_400e4256___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvProductoComponent.vue?vue&type=template&id=400e4256& */ "./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=template&id=400e4256&");
+/* harmony import */ var _InvProductoComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InvProductoComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InvProductoComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InvProductoComponent_vue_vue_type_template_id_400e4256___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _InvProductoComponent_vue_vue_type_template_id_400e4256___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InvProductoComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./InvProductoComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InvProductoComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=template&id=400e4256&":
+/*!***************************************************************************************************************************************!*\
+  !*** ./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=template&id=400e4256& ***!
+  \***************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InvProductoComponent_vue_vue_type_template_id_400e4256___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./InvProductoComponent.vue?vue&type=template&id=400e4256& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue?vue&type=template&id=400e4256&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InvProductoComponent_vue_vue_type_template_id_400e4256___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InvProductoComponent_vue_vue_type_template_id_400e4256___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
