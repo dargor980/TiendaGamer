@@ -7,13 +7,18 @@
                             <div class="card-header">
                                 <h3 class="mt-3 ml-3">Inventario</h3> 
                                 <hr>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item active"><i class="fas fa-home"></i></li>
+                                    </ol>
+                                </nav>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-xs-12 col-md-4 my-3">
                                         <div class="card ml-2 mr-2 option" style="background: linear-gradient(0,green,white);">
                                             <div class="card-img-top elemento">
-                                                <img src='img/caja.png' alt="" class="img-fluid imagen">
+                                                <img src='/img/caja.png' alt="" class="img-fluid imagen">
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-2 col-md-2 my-3">

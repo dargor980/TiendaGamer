@@ -15,6 +15,10 @@ class InventarioController extends Controller
         return view('admin.inventario.productos');
     }
 
+    public function agregarProducto(){
+        return view('admin.inventario.addProducto');
+    }
+
     public function stock(){
         return view('admin.inventario.stock');
     }

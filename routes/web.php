@@ -43,5 +43,7 @@ Route::get('/editarnoticias','AdminController@showEditarNoticias')->middleware('
 
 Route::post('/destacado/search','ProductoController@searchProducto');
 
+Route::get('inventario/productos/agregar','InventarioController@agregarProducto');
+
 
 

@@ -24,6 +24,8 @@ Vue.component('footadmin', require('./components/AdministracionComponents/Footer
 Vue.component('inventario', require('./components/AdministracionComponents/InventarioComponents/InventarioComponent.vue').default);
 Vue.component('invproducto', require('./components/AdministracionComponents/InventarioComponents/InvProductoComponent.vue').default);
 Vue.component('invhome', require('./components/AdministracionComponents/InventarioComponents/InvHomeComponent.vue').default);
+Vue.component('invstock', require('./components/AdministracionComponents/InventarioComponents/InvStockComponent.vue').default);
+Vue.component('invaddproducto', require('./components/AdministracionComponents/InventarioComponents/InvAddProductoComponent.vue').default);
 
 const app = new Vue({
     el: '#app',
