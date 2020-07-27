@@ -19,6 +19,8 @@ Route::put('/destacado/remove','ProductoController@removeToDestacado');
 
 Route::resource('/productos', 'ProductoController');
 
+Route::post('/productos/image','ProductoController@storeImagenProduto');
+
 Route::get('/inventario','ProductoController@inventario');
 
 Route::get('/destacado','ProductoController@destacado');

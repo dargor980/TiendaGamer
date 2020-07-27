@@ -16,7 +16,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-xs-12 col-md-4 my-3">
-                                        <div class="card ml-2 mr-2 option" style="background: linear-gradient(0,green,white);">
+                                        <a href="/inventario/productos/agregar" style="text-decoration:none; color:black;"><div class="card ml-2 mr-2 option" style="background: linear-gradient(0,green,white);">
                                             <div class="card-img-top elemento">
                                                 <img src='/img/caja.png' alt="" class="img-fluid imagen">
                                             </div>
@@ -29,7 +29,7 @@
                                                 </div>
                                             </div>
                                             
-                                        </div>
+                                        </div></a>
                                     </div>
                                     <div class="col-xs-12 col-md-4 my-3" @click="">
                                         <div class="card ml-2 mr-2 elemento option" style="background-color:red;">

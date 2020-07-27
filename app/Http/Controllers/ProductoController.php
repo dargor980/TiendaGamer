@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use Storage;
 
 class ProductoController extends Controller
 {
@@ -45,13 +46,20 @@ class ProductoController extends Controller
         $producto->precio_internet = $request->precio_internet;
         $producto->precio_tienda = $request->precio_tienda;
         $producto->descripcion = $request->descripcion;
-        $producto->id_destacado = $request->id_destacado;
-        $producto->url_imagen = $request->url_imagen;
+        $producto->id_destacado = 1;
+        $producto->url_imagen ='';
         $producto->id_categoria = $request->id_categoria;
 
         $producto->save();
         return $producto;
 
+    }
+
+    public function storeImagenProducto(Request $request)
+    {
+        $file=$request->file('imagen');
+        $nombre=$file->getClientOriginalName();
+        \Storage::disk('local')->put($nombre,  \File::get($file));
     }
 
     /**

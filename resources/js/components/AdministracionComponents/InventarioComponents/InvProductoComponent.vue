@@ -120,8 +120,7 @@
                                                         <img src="/img/control.jpg" alt="" class="mr-3" style="max-widht:64px; max-height:64px;">
                                                         <h5 class="mb-1 mt-4">Control Xbox One</h5>
                                                     <small>Hace 3 días</small>
-                                                    </div>
-                                                    
+                                                    </div>                                                    
                                                </div>
                                                <div class="d-flex w-100 justify-content-between">
                                                         <h6><span class="badge badge-pill badge-warning">$49990</span></h6>
